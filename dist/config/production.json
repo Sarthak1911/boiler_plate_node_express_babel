@@ -1,5 +1,5 @@
 {
-  "appName": "QR-API",
+  "appName": "Your app name",
   "port": 3000,
   "files": {
     "serverErrors": "serverErrors.log"

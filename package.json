@@ -27,8 +27,10 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "config": "^3.2.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "helmet": "^3.20.0",
     "morgan": "^1.9.1",
     "rotating-file-stream": "^1.4.3"
   }

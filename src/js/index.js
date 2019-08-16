@@ -3,23 +3,33 @@ import morgan from "morgan";
 import fs from "fs";
 import rfs from "rotating-file-stream";
 import path from "path";
+import helmet from "helmet";
+import config from "config";
 
 //Server stuff
 const app = express();
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 
-//Path to the logs folder
-const logPath = "../logs";
+//Set the development flag
+let devFlag = app.get("env") === "development";
+
+//Use helmet to set http headers
+app.use(helmet());
+
+//Only listen to JSON post requests
+app.use(express.json());
+
 //Create folder logs if not present
-fs.existsSync(logPath) || fs.mkdirSync(logPath);
+fs.existsSync(config.get("paths.dirPaths.logsPath")) ||
+  fs.mkdirSync(config.get("paths.dirPaths.logsPath"));
 
 //Create rotating file stream
-let accessLogs = rfs(path.join("serverErrors.log"), {
+let accessLogs = rfs(path.join(config.get("files.serverErrors")), {
   interval: "1d",
-  path: logPath
+  path: config.get("paths.dirPaths.logsPath")
 });
 
-//Log all errors to
+//Log all errors
 app.use(
   morgan("common", {
     skip: (req, res) => {
@@ -29,13 +39,26 @@ app.use(
   })
 );
 
-app.use(morgan("dev"));
+if (devFlag.devFlag) {
+  app.use(morgan("dev"));
+}
 
 app.get("/api", (req, res) => {
   res.status(200).send("All good");
 });
 
 app.listen(PORT, error => {
-  if (error) console.log(error);
-  console.log(`Listening on port ${PORT}`);
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  if (devFlag) {
+    console.log("Logging Enabled...");
+    console.log(`Listening on port ${PORT}`);
+  }
+});
+
+app.use((req, res, next) => {
+  res.status(404).send("Page not found");
 });

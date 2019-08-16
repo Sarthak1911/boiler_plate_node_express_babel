@@ -1,0 +1,12 @@
+{
+  "appName": "QR-API",
+  "port": 3000,
+  "files": {
+    "serverErrors": "serverErrors.log"
+  },
+  "paths": {
+    "dirPaths": {
+      "logsPath": "../logs"
+    }
+  }
+}

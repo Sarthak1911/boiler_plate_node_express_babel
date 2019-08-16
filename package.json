@@ -1,7 +1,7 @@
 {
-  "name": "qr_api",
+  "name": "boiler-plate-node-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is boiler plate for node api's",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sarthak1911/QR-API.git"
+    "url": ""
   },
-  "author": "Sarthak",
+  "author": "Replace with your name",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sarthak1911/QR-API/issues"
-  },
-  "homepage": "https://github.com/Sarthak1911/QR-API#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",

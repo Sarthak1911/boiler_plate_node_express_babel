@@ -13,13 +13,13 @@
 
 # TIPS
 
-## Run with `npm run dev` to run in development environment
+## Run with `npm run dev` to run as development build
 
-## Run with `npm run prod` to run in production environment
+## Run with `npm run prod` to run as production build
 
 ## Run `nodemon bundle.js` for auto reloading after transpiling
 
-## Use the webpack.config and package.json file as bolier plate to create node apps with babel
+## Copy contents of webpack.config and package.json file as bolier plate to create node apps with babel
 
 ## Change package.json accroding to the project
 
@@ -27,4 +27,6 @@
 
 ## This project stores error logs on a daily basis
 
-## Contents of .gitignore -> node_modules and logs
+## Contents of .gitignore : node_modules and logs
+
+## Running `npm run prod` will minify bundle.js

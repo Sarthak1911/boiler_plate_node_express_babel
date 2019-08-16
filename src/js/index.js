@@ -39,6 +39,7 @@ app.use(
   })
 );
 
+//Log messages only if env = development
 if (devFlag.devFlag) {
   app.use(morgan("dev"));
 }
@@ -55,8 +56,9 @@ app.listen(PORT, error => {
 
   if (devFlag) {
     console.log("Logging Enabled...");
-    console.log(`Listening on port ${PORT}`);
   }
+
+  console.log(`Listening on port ${PORT}`);
 });
 
 app.use((req, res, next) => {

@@ -1,6 +1,6 @@
 # Replace with information related to your API
 
-# Boiler Plate
+# Boiler Plate for NodeJS, Express and Babel
 
 ## How to use
 
@@ -11,22 +11,24 @@
 5. In one cmd transpile using `npm run dev`
 6. In another cmd traverse to dist folder and run `nodemon bundle.js`
 
-# TIPS
+## TIPS
 
-## Run with `npm run dev` to run as development build
+Run with `npm run dev` to run as development build
 
-## Run with `npm run prod` to run as production build
+Run with `npm run prod` to run as production build
 
-## Run `nodemon bundle.js` for auto reloading after transpiling
+Run `nodemon bundle.js` for auto reloading after transpiling
 
-## Copy contents of webpack.config and package.json file as bolier plate to create node apps with babel
+Copy contents of webpack.config and package.json file as bolier plate to create node apps with babel
 
-## Change package.json accroding to the project
+Change package.json accroding to the project
 
-# Notes
+Configure API settings like port, mail server, usernames, passwords in config files under dist/config folder
 
-## This project stores error logs on a daily basis
+## Notes
 
-## Contents of .gitignore : node_modules and logs
+This project stores error logs on a daily basis
 
-## Running `npm run prod` will minify bundle.js
+Contents of .gitignore : node_modules and logs
+
+Running `npm run prod` will minify bundle.js
